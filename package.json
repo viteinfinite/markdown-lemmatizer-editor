@@ -1,0 +1,12 @@
+{
+  "name": "lemmatizer-editor",
+  "version": "1.0.0",
+  "description": "Markdown editor with French lemmatization and repetition highlighting",
+  "scripts": {
+    "build-dicts": "node build-dicts.js",
+    "build": "npm run build-dicts"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
+
