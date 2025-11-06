@@ -151,7 +151,14 @@ window.addEventListener('DOMContentLoaded', () => {
     const workerCode = workerScriptEl.textContent;
     try {
       logDebug('Creating Web Worker from embedded code');
-      const blob = new Blob([workerCode], { type: 'application/javascript' });
+      // Replace relative URL with absolute URL for dict-bundle.json
+      // This is necessary because Blob URLs don't resolve relative paths correctly
+      const dictBundleUrl = new URL('./dict-bundle.json', window.location.href).href;
+      const modifiedWorkerCode = workerCode.replace(
+        /const DICT_BUNDLE_URL = ['"]\.\/dict-bundle\.json['"];/,
+        `const DICT_BUNDLE_URL = '${dictBundleUrl}';`
+      );
+      const blob = new Blob([modifiedWorkerCode], { type: 'application/javascript' });
       const url = URL.createObjectURL(blob);
       worker = new Worker(url);
       logInfo('Web Worker initialized successfully');
