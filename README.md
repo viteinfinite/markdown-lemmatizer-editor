@@ -53,7 +53,7 @@ Ce projet est configuré pour être déployé automatiquement sur GitHub Pages v
    git init
    git add .
    git commit -m "Initial commit"
-   git remote add origin https://github.com/VOTRE_USERNAME/lemmatizer-editor.git
+   git remote add origin https://github.com/VOTRE_USERNAME/markdown-lemmatizer-editor.git
    git branch -M main
    git push -u origin main
    ```
@@ -77,7 +77,7 @@ Le workflow GitHub Actions (`.github/workflows/deploy.yml`) se déclenche automa
 
 Votre site sera accessible à l'adresse:
 ```
-https://VOTRE_USERNAME.github.io/lemmatizer-editor/
+https://VOTRE_USERNAME.github.io/markdown-lemmatizer-editor/
 ```
 
 ### Déploiement manuel
